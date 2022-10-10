@@ -43,6 +43,10 @@ return (
 Try editing me!! 🎉
 </Text>
 <Button
+title="Game"
+color="#841584"
+onPress={() => navigation.navigate('Game')} />
+<Button
 title="Learn More"
 color="#841584"
 onPress={() => navigation.navigate('Detail')} 

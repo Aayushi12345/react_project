@@ -13,6 +13,8 @@ import store from './src/redux/store';
 import FetchDataButtonClick from './screen/FetchDataButtonclick';
 import Login from './screen/Login';
 import ProductDetail from './screen/ProductDtails';
+import Game from './screen/Game';
+import GameScreen from './screen/GameScreen';
 const Stack = createNativeStackNavigator();
 const MYStack = () => 
 {
@@ -23,6 +25,9 @@ name="Home"
 component={Home}
 options={{ title: 'Home' }}
 />
+<Stack.Screen name="Game" component={Game} />
+<Stack.Screen name="GameScreen" component={GameScreen} />
+
 <Stack.Screen name="Detail" component={Detail} />
 <Stack.Screen name="AsyncStorage" component={AsyncStorage} />
 
