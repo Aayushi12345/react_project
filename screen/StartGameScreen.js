@@ -1,12 +1,21 @@
 import {useState} from 'react';
 
-import {TextInput, StyleSheet, View, Alert} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import Colours from '../component/constant/colors';
+import {
+  TextInput,
+  StyleSheet,
+  View,
+  Alert,
+  userWindowDimensions,
+  ScrollView,
+  KeyboardAvoidingView
+} from 'react-native';
 import PrimaryButton from '../component/PrimaryButton';
 
 function StartGameScreen({onPickNumber}) {
   const [enteredNumber, setEnterNumber] = useState('');
+  0;
+
+//   const {width, height} = userWindowDimensions; // using screen height and widht
 
   function numberInputHnalder(enteredText) {
     setEnterNumber(enteredText);
@@ -28,9 +37,12 @@ function StartGameScreen({onPickNumber}) {
       return;
     }
     onPickNumber(choseNumber);
+    // const marginTopDistance = height < 380 ? 30 : 100;
     // console.log('Valid Number')
   }
   return (
+    <ScrollView style ={style.screen}>
+    <KeyboardAvoidingView style = {style.screen} behavior ="position">
     <View style={style.inputConatiner}>
       <TextInput
         style={style.numberInput}
@@ -50,11 +62,18 @@ function StartGameScreen({onPickNumber}) {
         </View>
       </View>
     </View>
+    </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 export default StartGameScreen;
 
 const style = StyleSheet.create({
+
+
+    screen:{
+        flex:1,
+    },
   inputConatiner: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -73,7 +92,7 @@ const style = StyleSheet.create({
   numberInput: {
     height: 50,
     fontSize: 32,
-    borderBottomColor: Colours.accent500,
+    borderBottomColor: '#ddb52f',
     borderBottomWidth: 2,
     color: '#ddb52f',
     marginVertical: 8,
