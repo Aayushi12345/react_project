@@ -6,6 +6,9 @@ import { connect ,useSelector, useDispatch} from 'react-redux';
 import {toggleFlag} from '../Component/Services/Home/action';
 import { incNumber} from '../action/index';
 import { decNumber } from '../action/index';
+// import React, { createContext } from 'react';
+
+// import ProductDetail from '../../screen/ProductDtails';
 
 // import {useS}
 // class Home extends React.Component
@@ -31,12 +34,21 @@ import { decNumber } from '../action/index';
 // const {text , editable} = this.state;
 // const {navigation,flag} = this.props;
 // console.log(navigation);
+
+// const FirstName = createContext();
+
 const Home = ({ navigation}) => {
   const myState = useSelector((state) => state.changeTheNumber);
 
 const dispatch = useDispatch();
 console.log({myState});
 return (
+<>
+{/* <FirstName.Provider value = {"Aayushi"}>
+<ProductDetail/>
+</FirstName.Provider> */}
+
+
 <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
 
 <Text>
@@ -125,6 +137,7 @@ defaultValue = "Please Enter name"
 {/* <Text>{flag}</Text> */}
 
 </View>
+</>
 );
 }
 
@@ -144,6 +157,7 @@ defaultValue = "Please Enter name"
 //   // },4000)
 // }
 export default Home;
+// export {FirstName};
 
 // const mapStateToProps = state =>  ({
 

@@ -1,15 +1,32 @@
 import React from 'react';
 import { AccessibilityInfo } from 'react-native';
 import { Icon, Input } from '@rneui/themed';
+import { FirstName } from '../src/Component/Home';
 
 import { Alert, Button, Image,StyleSheet,ScrollView, Text, TextInput, View } from 'react-native';
 
 const ProductDetail = () => {
 return (
+    <>
+   
+  
 <View style={{ flex: 1, backgroundColor:"#fff"}}>
 
 <View style={{ flex: 1,marginTop:40,marginLeft:40,marginRight:20}}>
-   
+<FirstName.Consumer>  // consumer ko function k jarurt hoti h 
+
+{(fname) =>
+{
+    return 
+    (
+
+    
+    <Text>My Name is {fname}</Text>
+    );
+
+}
+}
+</FirstName.Consumer>
 <Text   style = {style.textStyle}>
     Tomato
 </Text>
@@ -114,6 +131,7 @@ color='#000'>
 </View>
 
 </View>
+</>
 );
 }
 const style = StyleSheet.create({
